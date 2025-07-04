@@ -100,11 +100,10 @@ public class Nether implements Listener {
     @EventHandler
     public void onEntityDeath(EntityDeathEvent event) {
         if (event.getEntity() instanceof Wither) {
-            // 네더의 별 삭제
-            event.getDrops().removeIf(item -> item.getType() == Material.NETHER_STAR);
 
-            // 철 부츠 추가
-            ItemStack upgradedBoots = new ItemStack(Material.IRON_BOOTS);
+
+            // 다이아몬드 부츠 추가
+            ItemStack upgradedBoots = new ItemStack(Material.DIAMOND_BOOTS);
             ItemMeta bootsMeta = upgradedBoots.getItemMeta();
             if (bootsMeta != null) {
                 bootsMeta.setDisplayName(ChatColor.YELLOW + "위더 부츠");
